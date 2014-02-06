@@ -3,7 +3,7 @@ js-skeleton-gulp
 Just a template for JS projects using gulp, browserify, react and other stuff.
 
 ### Install dependencies & build
-Make sure [npm](https://npmjs.org/) is installed.
+Make sure [npm](https://npmjs.org/) and [gulp](http://gulpjs.com/) is installed.
 ```
 $ npm install
 $ gulp
