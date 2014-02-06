@@ -1,0 +1,28 @@
+{
+  "name": "js-skeleton-gulp",
+  "version": "0.0.1",
+  "description": "js-skeleton-gulp",
+  "main": "src/js/main.js",
+  "repository": {
+    "type": "git",
+    "url": "https://crudh@github.com/crudh/js-skeleton-gulp.git"
+  },
+  "author": "Christian Rudh <christian@rudh.se>",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/crudh/js-skeleton-gulp/issues"
+  },
+  "homepage": "https://github.com/crudh/js-skeleton-gulp",
+  "devDependencies": {
+    "gulp-util": "~2.2.14",
+    "gulp": "~3.5.1",
+    "gulp-concat": "~2.1.7",
+    "gulp-browserify": "~0.4.2",
+    "reactify": "~0.7.0",
+    "gulp-serve": "~0.1.1"
+  },
+  "dependencies": {
+    "envify": "~0.2.0",
+    "react": "~0.8.0"
+  }
+}
