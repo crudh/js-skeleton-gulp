@@ -2,7 +2,7 @@
   "name": "js-skeleton-gulp",
   "version": "0.0.1",
   "description": "js-skeleton-gulp",
-  "main": "src/js/main.js",
+  "main": "src/app/main.js",
   "repository": {
     "type": "git",
     "url": "https://crudh@github.com/crudh/js-skeleton-gulp.git"

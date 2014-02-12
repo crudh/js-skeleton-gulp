@@ -11,4 +11,4 @@ var AppContainer = React.createClass({
     }
 });
 
-module.exports = exports = AppContainer;
+module.exports = AppContainer;

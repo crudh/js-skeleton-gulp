@@ -1,21 +1,21 @@
 var gulp = require("gulp");
-var gutil = require("gulp-util");
 var concat = require("gulp-concat");
 var browserify = require("gulp-browserify");
 var serve = require('gulp-serve');
 
 var paths = {
+    dist: "./src/bundle",
     scripts: ["./src/js/**/*.js", "./src/js/**/*.jsx"]
 }
 
 gulp.task("scripts", function() {
-    gulp.src("./src/js/main.js")
+    gulp.src("./src/app/main.js")
         .pipe(browserify({
             transform: ["reactify"],
             debug: true
         }))
         .pipe(concat("bundle.js"))
-        .pipe(gulp.dest("./src/dist"));
+        .pipe(gulp.dest(paths.dist));
 });
 
 gulp.task("watch", function() {
@@ -27,6 +27,8 @@ gulp.task("serve", serve({
     port: 8080
 }));
 
-gulp.task("dev", ["watch", "serve"]);
+gulp.task("build", ["scripts"]);
 
-gulp.task("default", ["scripts"]);
+gulp.task("dev", ["build", "watch", "serve"]);
+
+gulp.task("default", ["build"]);
