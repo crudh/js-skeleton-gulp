@@ -5,7 +5,7 @@ var serve = require('gulp-serve');
 
 var paths = {
     dist: "./src/bundle",
-    scripts: ["./src/js/**/*.js", "./src/js/**/*.jsx"]
+    scripts: ["./src/app/**/*.js", "./src/app/**/*.jsx"]
 }
 
 gulp.task("scripts", function() {
