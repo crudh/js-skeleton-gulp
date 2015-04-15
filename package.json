@@ -14,15 +14,16 @@
   },
   "homepage": "https://github.com/crudh/js-skeleton-gulp",
   "devDependencies": {
-    "gulp-util": "~2.2.14",
-    "gulp": "~3.5.1",
-    "gulp-concat": "~2.1.7",
-    "gulp-browserify": "~0.4.2",
-    "reactify": "~0.7.0",
-    "gulp-serve": "~0.1.1"
+    "browserify": "^9.0.8",
+    "gulp": "~3.8.11",
+    "gulp-serve": "~0.3.1",
+    "gulp-util": "~3.0.4",
+    "reactify": "~1.1.0",
+    "vinyl-buffer": "^1.0.0",
+    "vinyl-source-stream": "^1.1.0"
   },
   "dependencies": {
-    "envify": "~0.2.0",
-    "react": "~0.8.0"
+    "envify": "~3.4.0",
+    "react": "~0.13.1"
   }
 }

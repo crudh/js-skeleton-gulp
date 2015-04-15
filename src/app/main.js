@@ -1,7 +1,7 @@
 var React = require("react");
 var AppContainer = require("./app.jsx");
 
-React.renderComponent(
-    AppContainer({}),
+React.render(
+    <AppContainer/>,
     document.getElementById("main")
 );

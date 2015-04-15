@@ -1,30 +1,35 @@
 var gulp = require("gulp");
-var concat = require("gulp-concat");
-var browserify = require("gulp-browserify");
+var browserify = require("browserify");
+var source = require('vinyl-source-stream');
+var buffer = require('vinyl-buffer');
+var reactify = require("reactify");
 var serve = require('gulp-serve');
 
 var paths = {
-    dist: "./src/bundle",
-    scripts: ["./src/app/**/*.js", "./src/app/**/*.jsx"]
+  dist: "./src/bundle",
+  scripts: ["./src/app/**/*.js", "./src/app/**/*.jsx"]
 }
 
-gulp.task("scripts", function() {
-    gulp.src("./src/app/main.js")
-        .pipe(browserify({
-            transform: ["reactify"],
-            debug: true
-        }))
-        .pipe(concat("bundle.js"))
-        .pipe(gulp.dest(paths.dist));
+gulp.task("scripts", function () {
+  var b = browserify({
+    entries: './src/app/main.js',
+    debug: true,
+    transform: [reactify]
+  });
+
+  return b.bundle()
+    .pipe(source('bundle.js'))
+    .pipe(buffer())
+    .pipe(gulp.dest(paths.dist));
 });
 
-gulp.task("watch", function() {
-    gulp.watch(paths.scripts, ["scripts"]);
+gulp.task("watch", function () {
+  gulp.watch(paths.scripts, ["scripts"]);
 });
 
 gulp.task("serve", serve({
-    root: "./src",
-    port: 8080
+  root: "./src",
+  port: 8080
 }));
 
 gulp.task("build", ["scripts"]);
